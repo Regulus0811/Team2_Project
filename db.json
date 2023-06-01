@@ -1,0 +1,21 @@
+{
+  "members": [
+    { "id": 1, "name": "John Doe" },
+    { "id": 2, "name": "Jane Smith" }
+  ],
+  "courses": [
+    { "id": 1, "title": "Math" },
+    { "id": 2, "title": "Science" }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "First Post",
+      "content": "Lorem ipsum dolor sit amet",
+      "comments": [
+        { "id": 1, "text": "Comment 1" },
+        { "id": 2, "text": "Comment 2" }
+      ]
+    }
+  ]
+}
