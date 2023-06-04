@@ -1,17 +1,25 @@
 body {
-  --nav-width: 200px;
-  margin: 0 0 0 var(--nav-width);
+  --nav-height: 50px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
 }
 
+.container {
+  display: flex;
+}
+
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--nav-width);
-  height: 100vh;
+  width: 100%;
+  height: var(--nav-height);
   background: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav__link {

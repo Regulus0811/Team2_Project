@@ -8,9 +8,9 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-            <h1>Welcome back, Dom</h1>
+            <h1>메인화면</h1>
             <p>
-                Fugiat voluptate et is
+                메인화면입니다
             </p>
             <p>
                 <a href="/post" data-link>View recent posts</a>
