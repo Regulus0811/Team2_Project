@@ -8,10 +8,12 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-            <h1>조원소개</h1>
-            <p>
-                ㅎㅇ?우리는2조임
-            </p>
-        `;
+      <div class="container text-center">
+        <h1 class="my-4">조원소개</h1>
+        <p>
+          ㅎㅇ? 우리는 2조임
+        </p>
+      </div>
+    `;
   }
 }
