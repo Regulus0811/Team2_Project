@@ -1,15 +1,43 @@
-/* put image name machi.jpg on the background */
 body {
-  background-image: url("machi.jpg");
+  background-image: url("machi.jpg"); /* 기본 배경 이미지 */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 70%;
   background-position: center;
   background-attachment: fixed;
 }
 
-h1 {
+/* 타이틀 */
+.my-4 {
+  font-size: 50px;
   text-align: center;
-  /* font-family: "Cute Font", cursive; */
+  font-family: "Lilita One", cursive;
   color: white;
-  /* text-shadow: 2px 2px 4px white; */
+}
+
+/* 소개글 */
+.my-5 {
+  font-size: 30px;
+  text-align: center;
+  font-family: "Gamja Flower", cursive;
+  -webkit-text-stroke: 1px black;
+  color: white;
+}
+
+/* 오른쪽버튼 */
+.rightButton {
+  float: right;
+  margin-right: 180px;
+  margin-top: 10px;
+  color: white;
+  background-color: #33aaee;
+}
+
+/* 왼쪽버튼 */
+.leftButton {
+  float: left;
+  margin-left: 180px;
+  margin-top: 10px;
+  color: white;
+  background-color: #33aaee;
+  transform: translateX(-10px); /* 왼쪽으로 이동하는 애니메이션 */
 }
