@@ -1,0 +1,15 @@
+/* put image name machi.jpg on the background */
+body {
+  background-image: url("machi.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  text-align: center;
+  /* font-family: "Cute Font", cursive; */
+  color: white;
+  /* text-shadow: 2px 2px 4px white; */
+}
