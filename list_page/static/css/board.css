@@ -4,11 +4,12 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
+} 
 
 .draggable.dragging {
-    opacity: .5;
-    border: 2px dashed red;
+    opacity: 0.5;
+    background-color: rgb(222, 222, 222);
+    border-radius: 7px;
 }
 
 .main_header_bg{
@@ -89,19 +90,59 @@
 .plans_item:hover .plans_link_bar{ display: block; }
 
 .plans_list{
-    display: grid;
     row-gap: 1em;
-    padding: 15px 100px 0 100px !important;
+    padding: 15px 20px 15px 20px !important; 
+}
+
+.plans_div2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px 0px 20px; 
+}
+
+.sel_all_chkBox{
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.sel_all_chk, .sel_all_chk_lab{
+    display: none;
+}
+
+#sel_all_chk{
+    margin-right: 10px;
+}
+
+
+.sel_btn{
+    display: block;
+    width: 85px !important;
+}
+
+.list_items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-check-input{
+    width: 1.5em !important;
+    height: 1.5em !important;
+    margin-right: 5px;
+}
+
+
+.list_item{
+    display: flex;
+    flex-direction: row !important;
+    width: 100%;
 }
 
 .list_item:hover{
     border: 1px solid #0d6efd;
-}
-
-.list_link{
-    display: flex;
-    flex-direction: row;
-    text-decoration: none;
 }
 
 .list_item_img{
@@ -147,4 +188,18 @@
     margin-left: 5px;
 }
 
+.checkBoxs{
+    margin-right: 10px;
+}
 
+.arrow_icon_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px !important;
+    height: 100%;
+    margin-left: 10px;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+
+}
