@@ -1,10 +1,10 @@
-body {
-  background-image: url("machi.jpg"); /* 기본 배경 이미지 */
+/* body {
+  background-image: url("machi.jpg"); /* 기본 배경 이미지 
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: center;
   background-attachment: fixed;
-}
+} */
 
 /* 타이틀 */
 .my-4 {
@@ -23,21 +23,15 @@ body {
   color: white;
 }
 
-/* 오른쪽버튼 */
-.rightButton {
-  float: right;
-  margin-right: 180px;
-  margin-top: 10px;
-  color: white;
-  background-color: #33aaee;
+.carousel-container {
+  position: relative;
+  height: 400px; /* 이미지 캐러셀의 높이 설정 */
 }
 
-/* 왼쪽버튼 */
-.leftButton {
-  float: left;
-  margin-left: 180px;
-  margin-top: 10px;
-  color: white;
-  background-color: #33aaee;
-  transform: translateX(-10px); /* 왼쪽으로 이동하는 애니메이션 */
+.content {
+  position: absolute;
+  top: 50%; /* 이미지 캐러셀의 중간에 배치 */
+  left: 50%; /* 이미지 캐러셀의 중간에 배치 */
+  transform: translate(-50%, -50%); /* 가운데 정렬 */
+  text-align: center;
 }
