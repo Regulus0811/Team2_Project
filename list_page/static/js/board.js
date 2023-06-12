@@ -1,13 +1,16 @@
 const $weeksList = document.querySelectorAll('.plans_item');
 const $plansList = document.querySelector('.plans_list');
 const $selBtn = document.querySelector('.sel_btn');
+const $selAllChk = document.querySelector('#sel_all_chk');
+const $checkBoxs = document.querySelectorAll('.checkBoxs');
 let selFlag = false
+let checkAllBoxFlag = true;
 
-const arr = [5, 7, 3, 2];
+const arr = [5, 7, 3, 2]; // 임시 확인용
 
 viewList(1);
 
-
+// Weeks 클릭 시 내용물 전환
 const changDisply = (e) => {
     e.currentTarget.children[1].classList.add('bar_active');
     
@@ -20,31 +23,88 @@ const changDisply = (e) => {
     viewList(e.currentTarget.value);
 };
 
+// Weeks 클릭 이벤트
 $weeksList.forEach( (item) =>{ // Weeks 선택 이벤트리스너
     item.addEventListener('click', changDisply);
 } );
 
-$selBtn.addEventListener('click', (e) => {
-    const $selAllChk = document.querySelector('#sel_all_chk');
-    const $selAllChkLab = document.querySelector('#sel_all_chk_lab');
+// select 버튼 클릭 이벤트
+$selBtn.addEventListener('click', () => {
+    const $selChkBox = document.querySelector('.sel_all_chkBox');
     const $checkBoxs = document.querySelectorAll('.checkBoxs');
+    const $arrowIconBox = document.querySelectorAll('.arrow_icon_box');
 
+    if (!selFlag) {
+        $selChkBox.style.opacity = '1';
+        $checkBoxs.forEach((box) => {
+            box.style.opacity = '1';
+            box.style.transform = 'translateX(0)';
+            box.style.transition = 'opacity 0.3s, transform 0.3s';
+            box.checked = false;
+        });
+        $arrowIconBox.forEach((box) => {
+            box.style.opacity = '1';
+            box.style.opacity = '1';
+            box.style.transform = 'translateX(0)';
+            box.style.transition = 'opacity 0.3s, transform 0.3s';
+        });
 
-    if(!selFlag){
-        $selAllChk.style.display = 'block';
-        $selAllChkLab.style.display = 'block';
         selFlag = true;
         drag(selFlag);
-    } else{
-        $selAllChk.style.display = 'none';
-        $selAllChkLab.style.display = 'none';
+
+    } else {
+        $selChkBox.style.opacity = '0';
+        
         $selAllChk.checked = false;
+        $checkBoxs.forEach((box) => {
+            box.style.opacity = '0';
+            box.style.transform = 'translateX(0)';
+            box.style.transition = 'opacity 0.3s, transform 0.3s';
+            box.checked = false;
+        });
+        $arrowIconBox.forEach((box) => {
+            box.style.opacity = '0';
+            box.style.transform = 'translateX(0)';
+            box.style.transition = 'opacity 0.3s, transform 0.3s';
+        });
+        
+
         selFlag = false;
     }
 
+    $selChkBox.style.transform = 'translateX(0)';
+    $selChkBox.style.transition = 'opacity 0.3s, transform 0.3s';
 });
 
 
+// checkbox 전체 선택 이벤트
+$selAllChk.addEventListener('change', () => {
+
+    const $checkBoxs = document.querySelectorAll('.checkBoxs');
+    if($selAllChk.checked){
+        $checkBoxs.forEach((box) => {
+            box.checked = true;
+        });
+        
+    } else{
+        $checkBoxs.forEach((box) => {
+            box.checked = false;
+        });
+        checkAllBoxFlag = false;
+    }
+});
+
+// 전체 체크상태에서 개별 체크박스 변경 시, 전체선택 체크해제
+function handleCheckboxChange() {
+const $checkBoxs = document.querySelectorAll('.checkBoxs');
+let checkAllBoxFlag = true;
+$checkBoxs.forEach((box) => {
+    if (!box.checked) {
+    checkAllBoxFlag = false;
+    }
+});
+$selAllChk.checked = checkAllBoxFlag;
+}
 
 function viewList(idx){ // 리스트 출력
     for(let i = 0; i < arr[idx - 1]; i++){
@@ -57,17 +117,22 @@ function viewList(idx){ // 리스트 출력
         listCkBth.type = 'checkbox';
         listCkBth.id = `form-check-input${i}`;
         listCkBth.classList.add('form-check-input', 'col-1', 'checkBoxs');
+        listCkBth.style.display = 'block';
+        listCkBth.style.opacity = '0';
+        listCkBth.addEventListener('change', handleCheckboxChange);
 
         const listCklab = document.createElement('label');
         listCklab.classList.add('form-check-label', 'col-10');
         listCklab.setAttribute('for', `form-check-input${i}`);
 
         const arrowIconBox = document.createElement('div');
-        arrowIconBox.classList.add('arrow_icon_box', 'col-1');
+        arrowIconBox.classList.add('arrow_icon_box', 'col-1', 'text-bg-primary');
         
         const arrowIcon = document.createElement('i');
         arrowIcon.classList.add('fa-solid', 'fa-up-down', 'fa-2xl', 'arrow_icon');
     
+        arrowIconBox.style.display = 'flex';
+        arrowIconBox.style.opacity = '0';
         arrowIconBox.appendChild(arrowIcon);
 
         const listItem = document.createElement('div');
@@ -124,6 +189,7 @@ function removeAllChild(list) {
     }
 }
 
+// Drag & Drop 부분(버그 수정보류)
 /**
  * [x] 엘리먼트의 .draggable, .container의 배열로 선택자를 지정합니다.
  * [x] draggables를 전체를 루프하면서 dragstart, dragend를 이벤트를 발생시킵니다.
