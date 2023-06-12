@@ -31,7 +31,7 @@
 
 .content {
   position: absolute;
-  top: 50%; /* 이미지 캐러셀의 상단에 배치 */
+  top: 70%; /* 이미지 캐러셀의 상단에 배치 */
   left: 50%; /* 이미지 캐러셀의 중간에 배치 */
   transform: translate(-50%, -50%); /* 가운데 정렬 */
   text-align: center;
