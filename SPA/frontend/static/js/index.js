@@ -1,7 +1,8 @@
-import Dashboard from "./views/Dashboard.js";
+import Dashboard from "./views/MainPage.js";
 import Posts from "./views/Posts.js";
 import Settings from "./views/Settings.js";
 import PostView from "./views/PostView.js";
+import MainPage from "./views/MainPage.js";
 
 
 const pathToRegex = path => new RegExp('^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + '$');
@@ -17,7 +18,6 @@ const getParams = match => {
 };
 
 
-
 const navigateTO = url => {
     history.pushState(null, null, url);
     router();
@@ -27,7 +27,7 @@ const navigateTO = url => {
 
 const router = async () => {
     const routes = [
-        { path : '/', view : Dashboard },
+        { path : '/', view : MainPage },
         { path : '/posts', view : Posts },
         { path : '/posts/:id', view : PostView },
         { path : '/settings', view : Settings },
@@ -67,3 +67,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     router();
 });
+
