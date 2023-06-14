@@ -63,7 +63,7 @@
 .align-Center-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 30px; /* 여백 조정 */
+  grid-gap: 100px; /* 여백 조정 */
   justify-items: center;
   align-items: center;
   margin-top: 20px; /* 카드를 아래로 내리기 위해 마진을 추가 */
@@ -82,4 +82,8 @@
   font-family: "Gamja Flower", cursive;
   color: black;
   -webkit-text-stroke: 0.5px black;
+}
+
+.navbar-brand {
+  font-family: "Mochiy Pop One", sans-serif;
 }
