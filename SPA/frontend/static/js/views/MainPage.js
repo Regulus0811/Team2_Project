@@ -17,13 +17,13 @@ export default class extends AbstractView {
             >
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
-                <img src="/machi.jpg" class="img-fluid" alt="..." />
+                <img src="img/machi.jpg" class="img-fluid" alt="..." />
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                <img src="/kusida.jpg" class="img-fluid" alt="..." />
+                <img src="img/kusida.jpg" class="img-fluid" alt="..." />
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                <img src="/dom.jpg" class="img-fluid" alt="..." />
+                <img src="img/dom.jpg" class="img-fluid" alt="..." />
                 </div>
             </div>
             </div>

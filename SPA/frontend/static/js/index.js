@@ -1,4 +1,4 @@
-import Dashboard from "./views/MainPage.js";
+import MainPage from "./views/MainPage.js";
 import Posts from "./views/Posts.js";
 import Settings from "./views/Settings.js";
 import PostView from "./views/PostView.js";
@@ -67,4 +67,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     router();
 });
-
