@@ -61,7 +61,7 @@ const router = async () => {
                 await loginAnimation();
                 // 로그인 관련
                 await loginController();
-                // 회원가입 관련
+                // // 회원가입 관련
                 await registerController();
             }
     }
