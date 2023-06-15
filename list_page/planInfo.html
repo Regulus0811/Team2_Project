@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./static/css/planInfo.css" />
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/b71869ee5c.js" crossorigin="anonymous"></script>
+
+    <!-- 사용자 -->
+    <link rel="stylesheet" href="./static/css/planInfo.css" />
 </head>
 <body>
 
@@ -18,6 +23,7 @@
 
     <div class="vstack row context_box">
 
+        <!-- 제목 -->
         <div class="row-col-12 context_header border-bottom">
             <span class="col-10 context_title">제목입니다.1</span>
             <div class="badge bg-info-subtle  text-dark context_date_box col-2">
@@ -26,7 +32,9 @@
             </div>
         </div>
 
-        <div class="vstack row-col-12 context_body">
+        <!-- 이미지 영역 -->
+        <!-- 이미지의 갯수에 따라 나오게 수정해야된다  -->
+        <div class="vstack row-cols-12 context_body"> 
             <div id="carouselExampleIndicators" class="carousel slide ">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -44,6 +52,7 @@
                         <img src="/list_page/static/img/tower.jpg" class="d-block w-100 img-fluid" alt="...">
                     </div>
                 </div>
+        
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -53,19 +62,22 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <!-- 글 내용 -->
             <div class="context_content">
                 전체길이 234m로 해변 타워로 일본 최고의 높이를 자랑한다. 후쿠오카시 서부의 부도심의 심벌적인 존재이며, 8000장의 반투명 거울로 뒤덮힌 정삼각형의 샤프한 외관은 ‘미러 세일’이라는 애칭으로 사랑받고 있다. 지상 123m의 5층 전망실에서 바라보는 후쿠오카의 파노라마 경치는 보는 이들을 압도한다. 최신식 TV망원경도 설치되어 있다. 칠월칠석과 크리스마스 시즌에는 반투명 거울에 야간 조명을 설치하여 보다 인상적인 야경을 연출한다. 1층에는 하카타 명과와 후쿠오카의 특산품인 명란젓을 고루 갖춘 기념품 코너, 베이커리&카페, 유럽풍 레스토랑 등도 있다.
             </div>
         </div>
 
-        <div class=" row-col-12 context_bodyBtn"> 
+        <!-- 수정버튼 -->
+        <div class=" row-cols-12 context_bodyBtn"> 
             <div class="body_btnBox">
                 <i class="fa-solid fa-file-pen fa-xl"></i>
                 <span>수정하기</span>
             </div>
         </div>
 
-        <div class=" row-col-12 context_footer border-top border-bottom">
+        <!-- 댓글 -->
+        <div class=" row-cols-12 context_footer border-top border-bottom">
             <form class=" col-11 context_fot_form" id="comment_form">
                 <label class="" for="exampleFormControlTextarea1">댓 글</label>
                 <textarea class=" form-control context_t_area" id="exampleFormControlTextarea1" rows="3" placeholder="댓글을 등록하세요."></textarea>
@@ -77,6 +89,7 @@
         </div>
     </div>
     
+    <!-- 사이드배너 -->
     <div class="sideBanner btn-group-vertical sideBtn_boxs" role="group" aria-label="Vertical button group">   
         <div class="side_btns" data-value="up"><i class="bi bi-arrow-up-circle-fill"></i></div>
         <div class="side_btns" data-value="down"><i class="bi bi-arrow-down-circle-fill"></i></div>
@@ -86,6 +99,9 @@
 
 <div class="main_footer_bg"></div>
 
+<!-- 사용자 -->
 <script src="/list_page//static/js/planInfo.js"></script>
+
+<!-- bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
 </body>
