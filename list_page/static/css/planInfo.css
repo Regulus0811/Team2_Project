@@ -31,7 +31,7 @@ div:focus{ outline: none; }
     
 .sideBanner {
     position: absolute !important;
-    top: 720px;
+    top: 70%;
     right: 40px;
     z-index: 100;
 }
@@ -109,7 +109,7 @@ div:focus{ outline: none; }
     display: flex;
     margin-top: 10px !important;
     height: 90px;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10px 0 10px 0;
 }
 

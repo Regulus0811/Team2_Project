@@ -1,25 +1,35 @@
-// 기본 위치(top)값
-// getComputedStyle() : 모든 CSS 속성값을 담은 객체를 반환한다
+
 const $sideBanner = document.querySelector('.sideBanner');
-let floatPosition = parseInt(getComputedStyle(document.querySelector('.sideBanner')).top);
 
-// scroll 인식
-window.addEventListener('scroll', () => {
-  // 현재 스크롤 위치
-  // window.scrollY : 수직으로 얼마나 스크롤됐는지 픽셀 단위로 반환
-  let currentTop = window.scrollY; /*|| document.documentElement.scrollTop*/ // 오래된 브라우저에서 사용확인
-  let bannerTop  = currentTop + floatPosition + 'px';
+function updateSideBannerPosition(){
+  const windowHeight = window.innerHeight;        // 브라우저 창 높이
+  const bannerHeight = $sideBanner.offsetHeight;  // sideBanner의 높이
 
-  // 이동 애니메이션
+  // window.scrollY : 수직으로 얼마나 스크롤됐는지 픽셀 단위로 반환(현재 스크롤 위치)
+  let currentTop = window.scrollY; 
+  let bannerTop  = (currentTop + windowHeight * 0.7) + 'px'; // 70% 유지
+
   $sideBanner.style.top = bannerTop;
-});
+
+  // 브라우저 창 높이가 sideBanner의 높이보다 작을 경우 sideBanner의 높이 조정
+  if (windowHeight < bannerHeight) {
+    // sideBanner 높이를 브라우저 창 높이로 설정
+    $sideBanner.style.height = windowHeight * 0.7 + 'px';
+  } else {
+    // 원래 높이로 돌려놓는 등 sideBanner 높이를 조절
+    $sideBanner.style.height = 'auto';
+  }
+}
+
+window.addEventListener('scroll', updateSideBannerPosition);
+window.addEventListener('resize', updateSideBannerPosition);
 
 // 초기 스크롤 이벤트를 수동으로 발생시켜 초기 위치를 설정
-// 페이지 로드 후 초기 스크롤 위치에 따라 .sideBanner 요소의 위치를 업데이트하는 역할
 window.dispatchEvent(new Event('scroll'));
+// 초기 이벤트를 수동으로 발생시켜 초기 높이 설정
+window.dispatchEvent(new Event('resize')); 
 
 const $sideBtns = document.querySelectorAll('.side_btns');
-
 $sideBtns.forEach( (btn) => {
     btn.addEventListener('click', (e) => {
       let bValue = e.currentTarget.dataset.value;
@@ -30,15 +40,14 @@ $sideBtns.forEach( (btn) => {
         });
       } else if(bValue === 'down'){
         window.scrollTo({
-          top : document.documentElement.scrollHeight, // 문서의 전체 높이
-          behavior : 'smooth' // 부드러운 스크롤링 효과 적용 
+          top : document.documentElement.scrollHeight, // 문서의 전체 높이 = 브라우저의 끝
+          behavior : 'smooth' 
         });
       }
       
     });
   } 
 );
-
 
 const $contextComments = document.querySelector('.context_comments');
 const comtArr          = []; // 임시 댓글 저장 list
@@ -246,7 +255,7 @@ function removeAllChild(list) {
   }
 }
 
-// 날짜 
+// 날짜 출력
 function dateFomat(){
   let year  = today.getFullYear();
   let month = today.getMonth() + 1; // 월은 [0 ~ 11] 인덱스 사용 : 0 = 1월 / 11 = 12월
@@ -258,7 +267,7 @@ function dateFomat(){
   return `${year}-${month}-${date}`;
 }
 
-// 시간
+// 시간 출력
 function timeFomat(){
   let hour = today.getHours();
   let minute = today.getMinutes();
