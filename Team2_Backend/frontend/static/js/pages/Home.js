@@ -1,3 +1,5 @@
+import loginTest from "../controller/loginTest.js"; 
+
 export default class {
     constructor() {
         document.title = "Home";

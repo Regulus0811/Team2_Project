@@ -8,7 +8,7 @@ function loginUser(id, passwd) {
     const users = JSON.parse(fs.readFileSync(dbPath, "utf8"));
     for (const user of users) {
         if (user.id === id && user.passwd === passwd) {
-            return true;
+            return user.name;
         }
     }
     return false;
@@ -38,14 +38,18 @@ function registerUser(name, id, passwd) {
     return true; // 회원가입 성공
 }
 
+
+// 로그인할때
 router.post("/login", (req, res) => {
     const { action, name, id, passwd } = req.body;
 
     if (action === "login") {
-        if (loginUser(id, passwd)) {
+        const userName = loginUser(id, passwd);
+        if (userName) {
             res.status(200).json({
                 success: true,
                 message: "로그인에 성공하였습니다.",
+                username: userName,
             });
         } else {
             res.status(400).json({

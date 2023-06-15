@@ -21,6 +21,8 @@ export default function loginController() {
         .then((res) => res.json())
         .then((res) => {
             if (res.success) {
+              // 로그인 성공 시 사용자 이름을 localStorage에 저장
+              localStorage.setItem("username", res.username);
               // 로그인 성공 시 "/" 경로로 이동
               window.location.href = "/"; // "/" 경로로 이동
             } else {

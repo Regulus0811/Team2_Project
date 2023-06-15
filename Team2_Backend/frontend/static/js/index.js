@@ -6,6 +6,23 @@ import Login from "./pages/Login.js";
 import loginController from "./controller/loginController.js"; 
 import registerController from "./controller/registerController.js"; 
 import loginAnimation from "./controller/loginAnimation.js"; 
+import loginTest from "./controller/loginTest.js";
+
+const updateNavbar = async () => {
+    const authLinks = document.getElementById("auth-links");
+    authLinks.innerHTML = await loginTest();
+  
+    const logoutButton = document.getElementById("logout-button");
+    if (logoutButton) {
+      logoutButton.addEventListener("click", () => {
+        localStorage.removeItem("username");
+        history.pushState(null, null, "/");
+        router();
+      });
+    }
+  };
+  
+
 
 const router = async () => {
     const routes = [
@@ -13,9 +30,6 @@ const router = async () => {
         { path: "/info", view: Info },
         { path: "/login", view: Login },
     ];
-
-    // console.log(location.pathname); // / /posts /setting /login
-
 
     // 페이지가 routes 안에 있는지 확인해서 경로와 불린값 전달
     const pageMatches = routes.map((route) => {
@@ -39,6 +53,9 @@ const router = async () => {
         const page = new match.route.view();
         document.querySelector("#root").innerHTML = await page.getHtml();
 
+            if (location.pathname == '/') {
+            }
+
             if (location.pathname == '/login') {
                 // 로그인창 애니메이션 관련
                 await loginAnimation();
@@ -46,15 +63,10 @@ const router = async () => {
                 await loginController();
                 // 회원가입 관련
                 await registerController();
-
-                
             }
     }
 
-
-
-
-
+    await updateNavbar();
 };
 
 // 뒤로 가기 할 때 데이터 나오게 하기 위함
@@ -62,7 +74,10 @@ window.addEventListener("popstate", () => {
     router();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    await router();
+
+
     document.body.addEventListener("click", (e) => {
         if (e.target.matches("[data-link]")) {
             e.preventDefault();
@@ -70,5 +85,4 @@ document.addEventListener("DOMContentLoaded", () => {
             router();
         }
     });
-    router();
 });
