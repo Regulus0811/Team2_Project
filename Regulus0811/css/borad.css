@@ -1,6 +1,6 @@
 /* 타이틀 */
 .my-4 {
-  font-size: 80px;
+  font-size: 5vw;
   text-align: center;
   font-family: "Gamja Flower", cursive;
   color: #ffffff;
@@ -9,7 +9,7 @@
 
 /* 소개글 */
 .my-5 {
-  font-size: 50px;
+  font-size: 5vw;
   text-align: center;
   font-family: "Gamja Flower", cursive;
   -webkit-text-stroke: 1px black;
@@ -23,8 +23,8 @@
 
 .content {
   position: absolute;
-  top: 80%; /* 이미지 캐러셀의 상단에 배치 */
-  left: 50%; /* 이미지 캐러셀의 중간에 배치 */
+  top: 120%;
+  left: 50%;
   transform: translate(-50%, -50%); /* 가운데 정렬 */
   text-align: center;
 }
