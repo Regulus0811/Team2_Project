@@ -31,24 +31,33 @@
 <div class="container" id="main_box">
     <form class="vstack row context_form">
         
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Title</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="mb-3 title_box">
+            <label for="title_input" class="form-label ">Title</label>
+            <input type="text" class="form-control" id="title_input">
         </div>
 
         <div class="text_editor ">
+            <label class="form-label ">Content</label>
             <div id="toolbar"></div>
             <div id="editor" class="editor_textarea"></div>
         </div>
 
 
-        <div class="input-group mb-3">
-            <input type="file" class="form-control file_inputs" id="inputGroupFile02" multiple>
-            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        <div class="input-group mb-3 form_fileBox">
+            <input type="file" class="form-control file_inputs" id="file_inputs" accept="image/gif, image/jpeg, image.png">
+            <label class="input-group-text" for="form_files">Upload</label>
         </div>
 
         <div class="row-cols-12">
             <div class="upload_fileList bg-secondary-subtle">
+            </div>
+        </div>
+
+        <div class="rows-cols-12 btnBoxs">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary cancelBtn">취소하기</button>
+                <button type="button" class="btn btn-outline-primary saveBtn">저장하기</button>
+                <button type="button" class="btn btn-outline-primary deleteBtn">삭제하기</button>
             </div>
         </div>
     </from>

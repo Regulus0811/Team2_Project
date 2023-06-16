@@ -28,18 +28,37 @@
     background-color: white;
 }
 
+.title_box{
+    margin-top: 12px;
+    
+}
+label{ font-weight: bolder; }
+.title_box>input{ box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075) , 0 0 8px rgba(159, 159, 159, 0.6); }
+
 .text_editor{
     border-radius: 10px;
     height: 500px;
+    margin-bottom: 10px;   
+}
+
+.ql-toolbar{
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075) , 0 0 8px rgba(159, 159, 159, 0.6);
+    border-radius: 7px 7px 0 0;
 }
 
 .editor_textarea{
     height: 400px !important;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075) , 0 0 8px rgba(159, 159, 159, 0.6);
+    border-radius: 0 0 7px 7px; 
 }
+
+.form_fileBox{margin-bottom: 10px !important;}
 
 .upload_fileList{
     border-radius: 7px;
     padding: 5px 10px;
+    box-shadow: 2px 2px 4px 2px #dadce0 inset;
+    
 }
 
 .file_box{
@@ -47,7 +66,7 @@
     justify-content: space-between;
     align-items: center;
     height: 30px;
-    font-size: 1.5rem;
+    font-size: 1.0rem; 
 }
 
 .file_name{
@@ -56,3 +75,9 @@
 
 /* .file_box>i{ font-size: 1.5rem; } */
 .file_box>i:hover{ cursor: pointer; }
+
+.btnBoxs{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
