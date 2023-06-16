@@ -1,11 +1,11 @@
-import loginTest from "../controller/loginTest.js"; 
+import loginTest from "../controller/loginTest.js";
 
 export default class {
-    constructor() {
-        document.title = "Home";
-    }
-    async getHtml() {
-        return `
+  constructor() {
+    document.title = "Home";
+  }
+  async getHtml() {
+    return `
       <div class="carousel-container">
         <!-- 이미지 캐러셀 -->
         <div
@@ -15,13 +15,13 @@ export default class {
         >
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
-              <img src="/static/img/machi.jpg" class="img-fluid" alt="..." />
+              <img src="/static/img/machi.jpg" class="img" alt="..." />
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-              <img src="/static/img/kusida.jpg" class="img-fluid" alt="..." />
+              <img src="/static/img/kusida.jpg" class="img" alt="..." />
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-              <img src="/static/img/dom.jpg" class="img-fluid" alt="..." />
+              <img src="/static/img/dom.jpg" class="img" alt="..." />
             </div>
           </div>
         </div>
@@ -39,5 +39,5 @@ export default class {
         </div>
       </div>
         `;
-    }
+  }
 }
