@@ -87,3 +87,23 @@
 .navbar-brand {
   font-family: "Mochiy Pop One", sans-serif;
 }
+
+.btn {
+  font-family: "Mochiy Pop One", sans-serif;
+  position: relative;
+}
+.container {
+  position: relative;
+}
+
+.btn_box {
+  position: static;
+  margin-top: 150px;
+  text-align: center;
+}
+
+.btn_box .btn {
+  flex: 0 0 auto;
+  margin-bottom: 10px;
+  min-width: 80px;
+}
