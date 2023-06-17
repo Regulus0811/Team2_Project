@@ -6,6 +6,8 @@ export default class {
   }
   async getHtml() {
     return `
+    <link rel="stylesheet" href="static/css/home.css">
+
       <div class="carousel-container">
         <!-- 이미지 캐러셀 -->
         <div
