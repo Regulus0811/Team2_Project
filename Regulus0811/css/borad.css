@@ -35,4 +35,8 @@
 /*사진 밝기 */
 img {
   filter: brightness(50%);
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 400px;
 }
