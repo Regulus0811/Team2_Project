@@ -4,7 +4,7 @@ export default class {
     }
     async getHtml() {
         return `
-            <link rel="stylesheet" href="static/css/info.css">    
+            <link rel="stylesheet" href="static/css/info.css">
 
             <div class="container" id="main_box">
             <div class="container_header"></div>

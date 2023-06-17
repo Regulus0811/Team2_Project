@@ -9,6 +9,8 @@ import registerController from "./controller/registerController.js";
 import loginAnimation from "./controller/loginAnimation.js"; 
 import loginTest from "./controller/loginTest.js";
 
+import infoscript from "./script/info.js";
+
 const updateNavbar = async () => {
     const authLinks = document.getElementById("auth-links");
     authLinks.innerHTML = await loginTest();
@@ -66,10 +68,16 @@ const router = async () => {
                 // 회원가입 관련
                 await registerController();
             }
+
+            if (location.pathname == '/info') {
+                
+            }
     }
 
     await updateNavbar();
 };
+
+
 
 // 뒤로 가기 할 때 데이터 나오게 하기 위함
 window.addEventListener("popstate", () => {
