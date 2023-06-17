@@ -1,0 +1,4 @@
+/*사진 밝기 */
+img {
+    filter: brightness(50%);
+  }

@@ -6,50 +6,8 @@ export default class {
   }
   async getHtml() {
     return `
-    <style>
-    /* 타이틀 */
-.my-4 {
-  font-size: 5vw;
-  text-align: center;
-  font-family: "Gamja Flower", cursive;
-  color: #ffffff;
-  -webkit-text-stroke: 1px black;
-}
+    <link rel="stylesheet" href="static/css/home.css">
 
-/* 소개글 */
-.my-5 {
-  font-size: 5vw;
-  text-align: center;
-  font-family: "Gamja Flower", cursive;
-  -webkit-text-stroke: 1px black;
-  color: white;
-}
-/* 캐러셀 조정 */
-.carousel-container {
-  position: relative;
-  height: 400px; /* 이미지 캐러셀의 높이 설정 */
-}
-
-.content {
-  position: absolute;
-  top: 120%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 가운데 정렬 */
-  text-align: center;
-}
-/* 로고 폰트*/
-.navbar-brand {
-  font-family: "Mochiy Pop One", sans-serif;
-}
-/*사진 밝기 */
-img {
-  filter: brightness(50%);
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 400px;
-}
-</style>
       <div class="carousel-container">
         <!-- 이미지 캐러셀 -->
         <div
