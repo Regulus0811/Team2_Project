@@ -6,7 +6,6 @@
 
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  background: #ededed;
 }
 
 input, button {
@@ -82,7 +81,7 @@ button {
   top: 0;
   width: 900px;
   height: 100%;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg");
+  background-image: url("/static/img/login.jpg");
   background-size: cover;
   transition: transform 1.2s ease-in-out;
 }

@@ -5,31 +5,34 @@
     font-family: "Gamja Flower", cursive;
     color: #ffffff;
     -webkit-text-stroke: 1px black;
-  }
-  
-  /* 소개글 */
-  .my-5 {
+}
+
+/* 소개글 */
+.my-5 {
     font-size: 80px;
     text-align: center;
     font-family: "Gamja Flower", cursive;
     -webkit-text-stroke: 1px black;
     color: white;
-  }
-  /* 캐러셀 조정 */
-  .carousel-container {
+}
+/* 캐러셀 조정 */
+.carousel-container {
     position: relative;
     height: 400px; /* 이미지 캐러셀의 높이 설정 */
-  }
-  
-  .content {
+}
+
+.content {
     position: absolute;
     top: 140%;
     left: 50%;
     transform: translate(-50%, -50%); /* 가운데 정렬 */
     text-align: center;
-  }
-  /* 로고 폰트*/
-  .navbar-brand {
+}
+/* 로고 폰트*/
+.navbar-brand {
     font-family: "Mochiy Pop One", sans-serif;
-  }
-  
+}
+
+body {
+    background-color: #d0d0d0;
+}

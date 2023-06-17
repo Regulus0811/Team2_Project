@@ -9,8 +9,6 @@ import registerController from "./controller/registerController.js";
 import loginAnimation from "./controller/loginAnimation.js"; 
 import loginTest from "./controller/loginTest.js";
 
-import infoscript from "./script/info.js";
-
 const updateNavbar = async () => {
     const authLinks = document.getElementById("auth-links");
     authLinks.innerHTML = await loginTest();
@@ -69,9 +67,6 @@ const router = async () => {
                 await registerController();
             }
 
-            if (location.pathname == '/info') {
-                
-            }
     }
 
     await updateNavbar();
