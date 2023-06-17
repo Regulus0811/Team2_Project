@@ -1,4 +1,5 @@
 import Home from "./pages/Home.js";
+import Menber from "./pages/Menber.js";
 import Info from "./pages/Info.js";
 import NotFound from "./pages/NotFound.js";
 import Login from "./pages/Login.js";
@@ -28,6 +29,7 @@ const router = async () => {
     const routes = [
         { path: "/", view: Home },
         { path: "/info", view: Info },
+        { path: "/menber", view: Menber },
         { path: "/login", view: Login },
     ];
 
