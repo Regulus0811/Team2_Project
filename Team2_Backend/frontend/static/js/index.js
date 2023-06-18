@@ -13,6 +13,7 @@ import loginAnimation from "./controller/loginAnimation.js";
 import loginTest from "./controller/loginTest.js";
 import toggleDeleteButtons from "./controller/deleteBtnController.js";
 import toggleUpdateButtons from "./controller/updateBtnController.js";
+import infoController from "./controller/infoController.js";
 
 import { submitPost } from './controller/postAddController.js';
 import { loadPosts } from "./controller/postLoadController.js";
@@ -112,6 +113,10 @@ const router = async () => {
                  toggleUpdateButtons();
 
                  
+          }
+
+          if (location.pathname == '/info') {
+            infoController();
           }
 
           if (location.pathname == '/rePostAdd') {
