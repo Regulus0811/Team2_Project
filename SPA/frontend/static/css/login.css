@@ -251,3 +251,11 @@ input {
   left: auto;
   right: 5px;
 }
+.cont.no-animation .s--signup.sign-in,
+.cont.no-animation .s--signup.sign-up,
+.cont.no-animation .img__text.m--up,
+.cont.no-animation .img__text.m--in,
+.cont.no-animation .img__btn span.m--in,
+.cont.no-animation .s--signup .img__btnspan.m--up {
+  transition: none;
+}
