@@ -5,6 +5,7 @@ import Login from "./pages/Login.js";
 import Community from "./pages/Community.js";
 import PostAdd from "./pages/PostAdd.js";
 import RePostAdd from "./pages/RePostAdd.js";
+import PostInfo from "./pages/PostInfo.js";
 
 import loginController from "./controller/loginController.js"; 
 import registerController from "./controller/registerController.js"; 
@@ -42,6 +43,7 @@ const router = async () => {
         { path: "/community", view: Community },
         { path: "/postAdd", view: PostAdd },
         { path: "/rePostAdd", view: RePostAdd },
+        { path: "/postInfo", view: PostInfo },
     ];
 
     // 페이지가 routes 안에 있는지 확인해서 경로와 불린값 전달
@@ -66,22 +68,22 @@ const router = async () => {
         const page = new match.route.view();
         document.querySelector("#root").innerHTML = await page.getHtml();
 
-        
+        // 게시글 목록 화면
         if (location.pathname === "/community") {
             // 게시물 로드
             const posts = await loadPosts();
             const tbody = document.querySelector("tbody");
-            let tableContent = "";
+            let tableContent = "";  
           
             if (posts) {
               for (const post of posts) {
                 tableContent += `
                                 <tr class="post-row">
                                 <td>${post.postNumber}</td>
-                                <td>${post.title}</td>
+                                <td><a href="/postInfo?postNumber=${post.postNumber}">${post.title}</a></td>
                                 <td>${post.author}</td>
                                 <td>${post.timestamp}</td>
-                                <td>${post.content}</td>
+                                <td>${post.content.substring(0, 7)}...</td>
 
                                 <td><button
                                 class="deleteBtnHidden"
@@ -116,6 +118,12 @@ const router = async () => {
             const rePostAdd = new RePostAdd();
             document.querySelector("#root").innerHTML = await rePostAdd.getHtml(); // contentDiv를 #root로 바꿉니다.
             rePostAdd.attachEventListeners();
+          }
+
+          if (location.pathname == '/postInfo') {
+            const postInfo = new PostInfo();
+            document.querySelector("#root").innerHTML = await postInfo.getHtml(); // contentDiv를 #root로 바꿉니다.
+            postInfo.attachEventListeners();
           }
           
 
