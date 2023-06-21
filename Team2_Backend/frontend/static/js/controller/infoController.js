@@ -1,4 +1,4 @@
-export default function infoController() {
+export default function InfoController() {
   // 각 버튼 그룹을 선택합니다.
   const deleteBtns = document.querySelectorAll(".del_btn");
   const modifyBtns = document.querySelectorAll(".mod_btn");
