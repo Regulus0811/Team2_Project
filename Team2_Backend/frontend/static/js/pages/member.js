@@ -1,6 +1,6 @@
 export default class {
   constructor() {
-    document.title = "Members";
+    document.title = "member";
   }
   async getHtml() {
     return `
@@ -253,7 +253,6 @@ export default class {
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <script src="js/intord2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         `;

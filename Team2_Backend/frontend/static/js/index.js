@@ -1,5 +1,5 @@
 import Home from "./pages/Home.js";
-import Info from "./pages/Info.js";
+import member from "./pages/member.js";
 import NotFound from "./pages/NotFound.js";
 import Login from "./pages/Login.js";
 import Community from "./pages/Community.js";
@@ -13,7 +13,7 @@ import loginAnimation from "./controller/loginAnimation.js";
 import loginTest from "./controller/loginTest.js";
 import toggleDeleteButtons from "./controller/deleteBtnController.js";
 import toggleUpdateButtons from "./controller/updateBtnController.js";
-import infoController from "./controller/InfoController.js";
+import memberController from "./controller/memberController.js";
 
 import { submitPost } from "./controller/postAddController.js";
 import { loadPosts } from "./controller/postLoadController.js";
@@ -35,7 +35,7 @@ const updateNavbar = async () => {
 const router = async () => {
   const routes = [
     { path: "/", view: Home },
-    { path: "/info", view: Info },
+    { path: "/member", view: member },
     { path: "/login", view: Login },
     { path: "/community", view: Community },
     { path: "/postAdd", view: PostAdd },
@@ -110,8 +110,8 @@ const router = async () => {
       toggleUpdateButtons();
     }
 
-    if (location.pathname == "/info") {
-      infoController();
+    if (location.pathname == "/member") {
+      memberController();
     }
 
     if (location.pathname == "/rePostAdd") {
